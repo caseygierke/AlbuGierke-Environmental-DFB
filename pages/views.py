@@ -4,3 +4,17 @@ from django.views.generic import TemplateView
 # Create your views here.
 class HomePageView(TemplateView):
 	template_name = 'home.html'
+
+class AboutPageView(TemplateView):
+	template_name = 'about.html'
+
+class ContactPageView(TemplateView):
+	template_name = 'contact.html'
+
+class ServicesPageView(TemplateView):
+	template_name = 'services.html'
+
+class ToolsPageView(TemplateView):
+	template_name = 'tools.html'
+
+
