@@ -1,1 +1,17 @@
-<h1>About Page</h1>
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Page specific menu -->
+
+	{% load static %}
+	
+	<br><br><h1>How can we help you?</h1>  
+	<p class="contact-text">I have a master's of science in hydrogeology.  In addition to technical environmental skills, I have a passion for computer programming and solving challenging computer based problems.  I have worked with huge datasets, worked with and developed databases with myriad data types, written basic software to work around proprietary software limitations, automated rote tasks, automated complex tasks...<br> I would love to talk to you about my products and services and how we might work together.</p>
+	
+	<img src="{% static 'images/i-win.JPG' %}" height=600>
+
+	<br><p class="contact-text">I would love to hear from you.  If you would like to get in touch with me to discuss a potential project or to engage my services, please take action and email or call me now<br>505-490-1893 <br><a href="mailto:albugierke.environmental@gmail.com">albugierke.environmental@gmail.com</a></p>
+
+{% endblock content %}
