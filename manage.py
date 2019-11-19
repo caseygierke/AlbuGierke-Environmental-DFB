@@ -1,3 +1,6 @@
+# This site was developed following the tutorial at
+# https://djangoforbeginners.com/pages-app/
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
