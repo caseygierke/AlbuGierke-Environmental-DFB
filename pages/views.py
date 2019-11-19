@@ -17,4 +17,6 @@ class ServicesPageView(TemplateView):
 class ToolsPageView(TemplateView):
 	template_name = 'tools.html'
 
+class CoachingPageView(TemplateView):
+	template_name = 'coaching.html'
 
