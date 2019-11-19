@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Cool background is done with css taken from 
+https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/comment-page-7/#comments
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AlbuGierke Environmental Solutions</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
+	</head>
+	
+	<body>
+		<div>
+			<ul class="navigation">
+				<li><a href="{% url 'home' %}">AlbuGierke Environmental Solutions</a></li>
+			</ul>
+		</div>
+
+		<!-- Page specific menu -->
+
+		<div>
+			<ul class="option-bar">
+
+				<li><a href="{% url 'about' %}">About Us</a></li>
+				<li><a href="{% url 'services' %}">Our Services</a></li>
+				<li><a href="{% url 'tools' %}">Tools</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+
+			</ul>
+		</div>
+		
+		<!-- Make a div to act as a spacer -->
+		<div class="spacer">
+		    &nbsp;
+		</div>
+		
+{% block content %}
+{% endblock %}
+
+	</body>
+</html>
+
