@@ -16,9 +16,7 @@ p {
     text-shadow: -0.1px -0.1px 0 #FFFAFA, 0.1px -0.1px 0 #FFFAFA, -0.5px 0.5px 0 #FFFAFA, 0.5px 0.5px 0 #FFFAFA;
 }
 
-.coaching {
-  margin: 10%;
-}
+/*Base*/
 
 .nav-item {
   background-color: #343A40;
@@ -28,43 +26,10 @@ p {
   background-color: #034f82;
 }
 
-.contact-text {
-    margin: 10%;
-    text-align: center;
-}
+/*Coaching page*/
 
-.bannor {
-    background-size: 900px 700px;
-    margin: auto;
-    text-align: center;
-}
-
-.our-content {
-    font-family: 'Raleway', sans-serif;
-    color: #000080;
-    max-width: 70%;
-    margin: auto;
-    line-height: 2.5em;
-    padding-top: 71px;
-    padding-bottom: 80px;
-    /*background-color: red; */
-    background-image: url(../images/TorreInvertido3.JPG);
-    background-size: fill;
-    background-position: center center;
-r   
-}
-
-button:hover {
-	background-color: orange;
-}
-
-ul.navigation, ul.option-bar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: black;
-
+.long-text {
+  margin: 10%;
 }
 
 ul, .page-body {
@@ -74,75 +39,6 @@ ul, .page-body {
   overflow: hidden;
   background-color: #B0E0E6;
 
-}
-
-#fixed-menu
-{
-    position: fixed;
-    width: 100%;
-    height: 75px;
-    background-color: #f00;
-    padding: 10px;
-}
-
-.spacer
-{
-    width: 100%;
-    height: 7%;
-}
-
-.option-bar {
-  /*This part fixes it to the top of the page*/
-  font-family: "Raleway", Gadget, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  /*text-transform: uppercase;*/
-  position: fixed;
-  height: 7%;
-  top: 0;
-  right: 0;
-  float: right;
-  /*width: 100%;*/
-}
-
-.option-bar li {
-  float: left;
-}
-
-li .product-bar {
-  float: right;
-  padding: 14px 16px;
-}
-
-.navigation li {
-  float: left;
-  padding: 14px 16px;
-  border: 1px red solid;
-}
-
-li .page-text {
-  float: left;
-  /*padding: 14px 16px;*/
-}
-
-.active {
-  background-color: #00008B;
-  color: black;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  /*font-weight: 700;*/
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: white;
-  color: black;
 }
 
 h1 {
@@ -163,34 +59,6 @@ h2, h3 {
   text-shadow: -1px -1px 0 #FFFAFA, 1px -1px 0 #FFFAFA, -1px 1px 0 #FFFAFA, 1px 1px 0 #FFFAFA;
 }
 
-.input-group {
-  padding-top: 50px;
-}
-
-.art-container {
-  border: 0px solid black;
-  width: 75%;
-  margin: 0 auto;
-  text-align: center;
-}
-.button-container {
-  display: flex;
-  border: 0px solid black;
-  padding: 10px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.product-container img {
-  margin: 10px;
-  box-shadow: 0px 10px 50px rgba(0,0,0, 0.7);
-}
-
-.product-container img:hover {
-  box-shadow: 0px 10px 50px rgba(37, 50, 233, 1);
-}
-
 span {
   margin: auto;
 }
@@ -208,7 +76,6 @@ span {
 }
 .cb-slideshow:after { 
     content: '';
-    /*background: transparent url(../images/image-asset4.jpeg) repeat top left; */
 }
 
 .cb-slideshow li span { 
@@ -238,10 +105,14 @@ span {
     animation: titleAnimation 36s linear infinite 0s; 
 }
 .cb-slideshow li div h3 { 
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100px;
     padding: 0;
     line-height: 200px; 
+
+    font-family: Papyrus; 
+    font-size: 2.5rem;
+    font-weight: 1000;
+    text-shadow: -1px -1px 0 #FFFAFA, 1px -1px 0 #FFFAFA, -1px 1px 0 #FFFAFA, 1px 1px 0 #FFFAFA;
+
 }
 
 .cb-slideshow li:nth-child(1) span { 
@@ -332,25 +203,3 @@ span {
   }
   100% { opacity: 0 }
 }
-
-/*Title will slide in from the right*/
-/*@keyframes titleAnimation { 
-  0% {
-      opacity: 0;
-      transform: translateX(200px);
-  }
-  8% {
-      opacity: 1;
-      transform: translateX(0px);
-  }
-  17% {
-      opacity: 1;
-      transform: translateX(0px);
-  }
-  19% {
-      opacity: 0;
-      transform: translateX(-400px);
-  }
-  25% { opacity: 0 }
-  100% { opacity: 0 }
-}*/
