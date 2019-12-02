@@ -13,32 +13,35 @@ https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-wi
 	</head>
 	
 	<body>
-		<div>
-			<ul class="navigation">
-				<li><a href="{% url 'home' %}">AlbuGierke Environmental Solutions</a></li>
-			</ul>
-		</div>
-
-		<!-- Page specific menu -->
-
-		<div>
-			<ul class="option-bar">
-
-				<li><a href="{% url 'about' %}">About Us</a></li>
-				<li><a href="{% url 'services' %}">Our Services</a></li>
-				<li><a href="{% url 'coaching' %}">Coaching</a></li>
-				
-				<li><a href="{% url 'tools' %}">Tools</a></li>
-				<li><a href="{% url 'contact' %}">Contact</a></li>
-
-			</ul>
-		</div>
 		
-		<!-- Make a div to act as a spacer -->
-		<div class="spacer">
-		    &nbsp;
-		</div>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="{% url 'home' %}">AlbuGierke Environmental Solutions</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 		
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'about' %}">About<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'services' %}">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'coaching' %}">Coaching</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'tools' %}">Tools</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+					</li>
+					
+				</ul>
+			</div>
+		</nav>
+	
 {% block content %}
 {% endblock %}
 

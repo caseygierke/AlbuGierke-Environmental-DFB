@@ -7,12 +7,25 @@ body {
     padding-bottom: 80px;
     text-align: center;
     background-color: #B0E0E6;
+    margin: 10%;
 }
 
 p {
     text-align: center;
     font-weight: bolder;
     text-shadow: -0.1px -0.1px 0 #FFFAFA, 0.1px -0.1px 0 #FFFAFA, -0.5px 0.5px 0 #FFFAFA, 0.5px 0.5px 0 #FFFAFA;
+}
+
+.coaching {
+  margin: 10%;
+}
+
+.nav-item {
+  background-color: #343A40;
+}
+
+.nav-link:hover {
+  background-color: #034f82;
 }
 
 .contact-text {
@@ -45,7 +58,7 @@ button:hover {
 	background-color: orange;
 }
 
-ul, .navigation, .option-bar {
+ul.navigation, ul.option-bar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -78,20 +91,6 @@ ul, .page-body {
     height: 7%;
 }
 
-.navigation {
-  /*This part fixes it to the top of the page*/
-  font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 22px;
-  /*text-transform: uppercase;*/
-  font-weight: 500;
-  position: fixed;
-  height: 7%;
-  top: 0;
-  width: 100%;
-  /*padding: 14px 30px;*/
-  
-}
-
 .option-bar {
   /*This part fixes it to the top of the page*/
   font-family: "Raleway", Gadget, sans-serif;
@@ -106,7 +105,7 @@ ul, .page-body {
   /*width: 100%;*/
 }
 
-li {
+.option-bar li {
   float: left;
 }
 
@@ -115,9 +114,10 @@ li .product-bar {
   padding: 14px 16px;
 }
 
-li .navigation {
+.navigation li {
   float: left;
   padding: 14px 16px;
+  border: 1px red solid;
 }
 
 li .page-text {
