@@ -20,3 +20,5 @@ class ToolsPageView(TemplateView):
 class CoachingPageView(TemplateView):
 	template_name = 'coaching.html'
 
+class COVIDpageView(TemplateView):
+	template_name = 'COVIDtracker.html'

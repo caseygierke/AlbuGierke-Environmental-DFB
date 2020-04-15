@@ -18,7 +18,23 @@ from django.urls import path, include
 from pages import urls as pages_urls
 #from app1 import urls as app1_urls
 
+# from django.conf.urls import patterns, include, url
+# from django.conf.urls.static import static
+# from django.contrib import admin
+# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+# from myweblab import settings
+
+# admin.autodiscover()
+
+# urlpatterns = patterns('',
+#     .......
+# ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(pages_urls)),
+    # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
+
+# urlpatterns += staticfiles_urlpatterns()
