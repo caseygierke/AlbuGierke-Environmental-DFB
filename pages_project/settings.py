@@ -25,7 +25,7 @@ SECRET_KEY = 'th3%67x6-80k4^lbne_q5fv9$pr+^9ruo#5_1t9@59!!)2=$1a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.albugierke-environmental.com']
 
 
 # Application definition
