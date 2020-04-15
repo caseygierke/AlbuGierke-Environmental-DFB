@@ -44,7 +44,7 @@ ul, .page-body {
 h1 {
   text-align: center;
   color: #000080;
-  font-family: Papyrus; 
+  font-family: Papyrus;
   font-size: 3.5rem;
   font-weight: 1000;
   text-shadow: -1px -1px 0 #FFFAFA, 1px -1px 0 #FFFAFA, -1px 1px 0 #FFFAFA, 1px 1px 0 #FFFAFA;
@@ -53,7 +53,7 @@ h1 {
 h2, h3 {
   text-align: center;
   color: #000080;
-  font-family: Papyrus; 
+  font-family: Papyrus;
   font-size: 2.5rem;
   font-weight: 1000;
   text-shadow: -1px -1px 0 #FFFAFA, 1px -1px 0 #FFFAFA, -1px 1px 0 #FFFAFA, 1px 1px 0 #FFFAFA;
@@ -66,19 +66,19 @@ span {
 /*------------------------------------*/
 
 .cb-slideshow,
-.cb-slideshow:after { 
+.cb-slideshow:after {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 7%;
     left: 0px;
-    z-index: 0; 
+    z-index: 0;
 }
-.cb-slideshow:after { 
+.cb-slideshow:after {
     content: '';
 }
 
-.cb-slideshow li span { 
+.cb-slideshow li span {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -90,10 +90,10 @@ span {
     background-repeat: repeat-y;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 36s linear infinite 0s; 
+    animation: imageAnimation 36s linear infinite 0s;
 }
 
-.cb-slideshow li div { 
+.cb-slideshow li div {
     z-index: 1000;
     position: absolute;
     bottom: 30px;
@@ -102,60 +102,60 @@ span {
     text-align: center;
     opacity: 0;
     color: #fff;
-    animation: titleAnimation 36s linear infinite 0s; 
+    animation: titleAnimation 36s linear infinite 0s;
 }
-.cb-slideshow li div h3 { 
+.cb-slideshow li div h3 {
     padding: 0;
-    line-height: 200px; 
+    line-height: 200px;
 
-    font-family: Papyrus; 
+    font-family: Papyrus;
     font-size: 2.5rem;
     font-weight: 1000;
     text-shadow: -1px -1px 0 #FFFAFA, 1px -1px 0 #FFFAFA, -1px 1px 0 #FFFAFA, 1px 1px 0 #FFFAFA;
 
 }
 
-.cb-slideshow li:nth-child(1) span { 
+.cb-slideshow li:nth-child(1) span {
     background-image: url(../images/1.jpg);
 }
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(../images/2.jpg); 
-    animation-delay: 6s; 
+.cb-slideshow li:nth-child(2) span {
+    background-image: url(../images/2.JPG);
+    animation-delay: 6s;
 }
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(../images/3.jpg);
-    animation-delay: 12s; 
+.cb-slideshow li:nth-child(3) span {
+    background-image: url(../images/3.JPG);
+    animation-delay: 12s;
 }
-.cb-slideshow li:nth-child(4) span { 
-    background-image: url(../images/4.jpg);
-    animation-delay: 18s; 
+.cb-slideshow li:nth-child(4) span {
+    background-image: url(../images/4.JPG);
+    animation-delay: 18s;
 }
-.cb-slideshow li:nth-child(5) span { 
-    background-image: url(../images/5.jpg);
-    animation-delay: 24s; 
+.cb-slideshow li:nth-child(5) span {
+    background-image: url(../images/5.JPG);
+    animation-delay: 24s;
 }
-.cb-slideshow li:nth-child(6) span { 
-    background-image: url(../images/6.jpg);
-    animation-delay: 30s; 
-}
-
-.cb-slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) div { 
-    animation-delay: 18s; 
-}
-.cb-slideshow li:nth-child(5) div { 
-    animation-delay: 24s; 
-}
-.cb-slideshow li:nth-child(6) div { 
-    animation-delay: 30s; 
+.cb-slideshow li:nth-child(6) span {
+    background-image: url(../images/6.JPG);
+    animation-delay: 30s;
 }
 
-@keyframes imageAnimation { 
+.cb-slideshow li:nth-child(2) div {
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div {
+    animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div {
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div {
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div {
+    animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
     0% { opacity: 0; animation-timing-function: ease-in; }
     8% { opacity: 1; animation-timing-function: ease-out; }
     17% { opacity: 1 }
@@ -163,7 +163,7 @@ span {
     100% { opacity: 0 }
 }
 
-@keyframes titleAnimation { 
+@keyframes titleAnimation {
     0% { opacity: 0 }
     8% { opacity: 1 }
     12% { opacity: 1 }
@@ -175,15 +175,15 @@ span {
   opacity: 1;
 }
 
-@media screen and (max-width: 1140px) { 
+@media screen and (max-width: 1140px) {
     .cb-slideshow li div h3 { font-size: 140px }
 }
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
     .cb-slideshow li div h3 { font-size: 80px }
 }
 
 /*Scale up image a bit and rotate it slightly*/
-@keyframes imageAnimation { 
+@keyframes imageAnimation {
   0% {
       opacity: 0;
       animation-timing-function: ease-in;
