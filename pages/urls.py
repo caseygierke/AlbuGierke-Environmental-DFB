@@ -1,5 +1,9 @@
 from django.urls import path
+<<<<<<< HEAD
 from .views import HomePageView, AboutPageView, ContactPageView, ServicesPageView, ToolsPageView, CoachingPageView, COVIDpageView
+=======
+from .views import HomePageView, AboutPageView, ContactPageView, ServicesPageView, ToolsPageView, CoachingPageView, COVIDpageView, EMDRpageView
+>>>>>>> tmp
 
 urlpatterns = [
 	path('', HomePageView.as_view(), name='home'),
@@ -9,4 +13,8 @@ urlpatterns = [
 	path('services/', ServicesPageView.as_view(), name='services'),
 	path('tools/', ToolsPageView.as_view(), name='tools'),
 	path('COVIDtracker/', COVIDpageView.as_view(), name='COVIDtracker'),
+<<<<<<< HEAD
+=======
+	path('EMDRbar/', EMDRpageView.as_view(), name='EMDRbar'),
+>>>>>>> tmp
 ]
