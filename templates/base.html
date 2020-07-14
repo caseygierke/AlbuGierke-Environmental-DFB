@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Cool background is done with css taken from 
+<!-- Cool background is done with css taken from
 https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/comment-page-7/#comments
  -->
 <html>
@@ -11,15 +11,15 @@ https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-wi
 		<link rel="stylesheet" href="{% static 'styles/styles.css' %}">
 		<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
 	</head>
-	
+
 	<body>
-		
+
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<a class="navbar-brand" href="{% url 'home' %}">AlbuGierke Environmental Solutions</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-		
+
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
@@ -35,13 +35,19 @@ https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-wi
 						<a class="nav-link" href="{% url 'tools' %}">Tools</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="{% url 'COVIDtracker' %}">COVID-Tracker</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'EMDRbar' %}">EMDR Bar</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
 					</li>
-					
+
 				</ul>
 			</div>
 		</nav>
-	
+
 {% block content %}
 {% endblock %}
 
