@@ -4,34 +4,33 @@
 	<!-- Page specific menu -->
 
 	{% load static %}
-	
+
 	<!-- <link rel="stylesheet" href="{% static 'styles/COVIDstyle.css' %}"> -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 
-	<h1>US COVID 19 Activity Over Time</h1>
-      <h2>Select the state and the data type to view</h2>
+	<div class="wrapper">
+        <h1>US COVID 19 activity over time</h1>
+        <h2>Select the state and the data type to view</h2>
 
-      State: <select id="selectState" onchange="selectState()">
-      </select>
-      
-     Content: <select id="selectKeys" onchange="selectKeys()">
-      </select>
+        State: <select id="selectState" onchange="selectState()">
+        </select>
 
-      <canvas id="myChart" width="1600" height="900"></canvas>
+        Content: <select id="selectKeys" onchange="selectKeys()">
+        </select>
+
+        <canvas id="myChart" width="1600" height="900"></canvas>
     </div>
 
-    <!-- <script src="/pages/static/js/covid-tracker.js"></script> -->
 	<script src="{% static 'js/covid-tracker.js' %}" type="text/javascript"></script>
-	<!-- {% static 'js/covid-tracker.js' %}<!--  -->
-	<!-- <link rel="stylesheet" href="{% static 'styles/COVID -->style.css' %}"> -->
+	<script src="{% static 'js/utils.js' %}" type="text/javascript"></script>
 
 	<br><br>
 	<img src="{% static 'images/i-win.JPG' %}" height=600>
 
-	<p class="long-text">We would love to hear from you.  If you would 
-	like to get in touch with us to discuss a potential project or 
-	to engage our services, please take action and email or call 
+	<p class="long-text">We would love to hear from you.  If you would
+	like to get in touch with us to discuss a potential project or
+	to engage our services, please take action and email or call
 	now<br>505-490-1893 <br><a href="mailto:albugierke.environmental@gmail.com">albugierke.environmental@gmail.com</a></p>
 
 {% endblock content %}
