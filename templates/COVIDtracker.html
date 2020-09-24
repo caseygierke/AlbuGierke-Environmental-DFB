@@ -8,22 +8,33 @@
 	<!-- <link rel="stylesheet" href="{% static 'styles/COVIDstyle.css' %}"> -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
 
 	<div class="wrapper">
         <h1>US COVID 19 activity over time</h1>
         <h2>Select the state and the data type to view</h2>
 
-        State: <select id="selectState" onchange="selectState()">
-        </select>
+        <div id="loader" class="lds-dual-ring"></div>
 
-        Content: <select id="selectKeys" onchange="selectKeys()">
-        </select>
+        <div id="data-content" style="display: none">
+            State: <select id="selectState" onchange="selectState()">
+            </select>
 
-        <canvas id="myChart" width="1600" height="900"></canvas>
+            Content: <select id="selectKeys" onchange="selectKeys()">
+            </select>
+
+            <canvas id="myChart" width="1600" height="900"></canvas>
+        </div>
     </div>
 
-	<script src="{% static 'js/covid-tracker.js' %}" type="text/javascript"></script>
+    <div class="data-table">
+      <table id="data-table" class="display" width="100%"></table>
+    </div>
+
 	<script src="{% static 'js/utils.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/covid-tracker.js' %}" type="text/javascript"></script>
 
 	<br><br>
 	<img src="{% static 'images/i-win.JPG' %}" height=600>
