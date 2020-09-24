@@ -28,6 +28,41 @@ p {
 
 /*Coaching page*/
 
+.container-2 {
+	border: 1px solid black;
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.flex-box-map-container {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    border: None;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+div.my-map {
+    position: relative;
+    overflow: hidden;
+    height: 100% !important;
+    flex: 2 !important;
+    border: 1px solid black !important;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 .long-text {
   margin: 10%;
 }
@@ -202,4 +237,39 @@ span {
       /*transform: scale(1.1) rotate(3deg);*/
   }
   100% { opacity: 0 }
+}
+
+/*For covid loader icon*/
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: blue transparent red transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.data-table {
+  background-color: #b7c1c4;
+  border-radius: 15px;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px 0 0 0;
+  margin: 30px 0;
+  line-height: 20px;
 }

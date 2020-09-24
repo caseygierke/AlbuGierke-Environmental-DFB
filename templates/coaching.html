@@ -4,40 +4,143 @@
 	<!-- Page specific menu -->
 
 	{% load static %}
-	
+
 	<br>
 	<h1>Coaching</h1>
-	<p class="long-text">We know programming can seem really difficult or scary, we all were 
-		there not so long ago. It doesn’t have to be if you are willing and able to ask for 
-		help and YOU are here so YOU are able to break down those mental barriers. We all 
-		can understand most concepts if they are broken down for us enough that we can follow 
+	<p class="long-text">We know programming can seem really difficult or scary, we all were
+		there not so long ago. It doesn’t have to be if you are willing and able to ask for
+		help and YOU are here so YOU are able to break down those mental barriers. We all
+		can understand most concepts if they are broken down for us enough that we can follow
 		the process at hand! <br>
 		<br>
-		During our sessions together, we will use our palm-sized-globe (PSG) strategy to learn 
-		each new concept. With this strategy, any aspect that isn't crystal clear to you, we 
-		will stop, and we encourage you to stop us at any time, rotate the globe, and we will 
+		During our sessions together, we will use our palm-sized-globe (PSG) strategy to learn
+		each new concept. With this strategy, any aspect that isn't crystal clear to you, we
+		will stop, and we encourage you to stop us at any time, rotate the globe, and we will
 		offer you an explanation of the concept from another perspective. <br>
 		<br>
-		Whether you want to improve your coding skills, learn how to automate processes, get 
-		into a coding bootcamp, deal with large data sets, create websites to build up your 
-		portfolio, or ace your classes, we will be there to help you succeed. Our areas of 
-		expertise are:</p>
+		Whether you want to improve your coding skills, learn how to automate processes, get
+		into a coding bootcamp, deal with large data sets, create websites to build up your
+		portfolio, setup a database or ace your classes, we will be there to help you succeed.
+		Our areas of expertise are:</p>
+
+	<h1>What we Teach</h1><br><br>
 	<ul class="page-body">
 		<li><h3>Python</h3></li><br>
 		<li><h3>SQL</h3></li><br>
+		<li><h3>JavaScript</h3></li><br>
 		<li><h3>Data Processing</h3></li>
 	</ul>
-	<p class="long-text">My objectives are focused on you, your education, your future and your career and 
-		because I take that very seriously, I prefer to give you a free consultation (up 
-		to 30 min) to help you decide if we are going to be the right fit for each other. 
-		I am truly excited to speak with you and can’t wait to get started working with 
+
+	<p class="long-text">In today's world, we have so many options. We've done in person coaching
+        which is really great for developing personal relationships. We also do our coaching
+        virtually which breaks down the barriers of locality. We have helped students all over to
+        grow and build their programming skills.</p>
+
+    <h3>Student Locations and Home Base</h3>
+	<div class="flex-box-map-container">
+	    <!--The Google Maps API tries to control the css-->
+        <!--The key here is to use a class name for css that is different than the id used for Javascript-->
+        <div class="my-map" id="map"></div>
+
+	</div>
+    <!--We have to link to their site to meet their use requirement-->
+    <p>Map icons from <a href="https://icons8.com">Icons8</a></p>
+
+    <br><br>
+    <h1>Student Reviews</h1>
+	<p class="long-text">Before I started working with Casey, I was struggling to make sense of
+    	Python programming. The book that I had and my online class was hard to follow. With his
+    	help, I have mastered my online course with an A (or A+, I don't recall). A big challenge I
+    	had was the environment that I was using (IDLE) which was not very user friendly, and would
+    	not prompt you if there was an error. Casey got me set up with a much better environment
+    	and was amazing at being able to explain things in a way so that I could understand the
+    	Python language. He would give me some examples, have me work through them, then once he
+    	knew that I understood the language to accomplish the task, he would have me do the
+    	programming or the assignments at hand. I liked everything about how Casey helped me learn.
+    	He is a fantastic and patient teacher. I highly recommend him and give him 6 stars out of 5!<br>
+        Jason- 13 years old</p>
+
+	<p class="long-text">I had never, ever done coding or programming before. The only bit of coding I
+	    knew was from my school in grade 5 or 6, and that was on MS-DOS. Since I enrolled in a Data Science
+	    and Analytics course at university, I wanted to orient myself with Python and SQL so that I
+	    know what is being taught in the classroom and I am atleast at par with other students who
+	    had the coding experience.
+	    I not only finished my coursework at university with A+ but I also now have hands on experience with Pandas,
+	    Numpy, and the basics of Python. I am a Data Analytics professional and confident of my
+	    programming skills.
+        Casey is the most patient teacher and takes time to explain everything we are doing. He first
+        wrote the code and then made me write the code. His teaching style is suitable for students
+        of any age.<br>
+        Supriya- University student</p>
+
+	<p class="long-text">My objectives are focused on you, your education, your future and your career and
+		because I take that very seriously, I prefer to give you a free consultation (up
+		to 30 min) to help you decide if we are going to be the right fit for each other.
+		I am truly excited to speak with you and can’t wait to get started working with
 		you to achieve your goals! <br>
 		<br>
-		- Casey Gierke, CEO</p> 
+		- Casey Gierke, CEO</p>
 	<br>
 
 	<img src="{% static 'images/i-win.JPG' %}" height=600>
 
 	<br><p class="long-text">We would love to hear from you.  If you would like to get in touch with us to discuss how to kick start your programming career, please take action and email or call us now<br>505-490-1893 <br><a href="mailto:albugierke.environmental@gmail.com">albugierke.environmental@gmail.com</a></p>
+
+    <script>
+    // Initialize and add the map
+    function initMap() {
+
+        // Create a bounds variable
+        var bounds = new google.maps.LatLngBounds();
+
+        // The location of The Thumb
+        var abq = new google.maps.LatLng(35.204, -106.454430);
+
+        // Create map, centered at the Thumb
+        var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 4, center: abq, mapTypeId: google.maps.MapTypeId.SATELLITE});
+        // Create marker, positioned at ABQ
+        var marker = new google.maps.Marker({ position: abq,
+                                            icon: { url: "https://img.icons8.com/dusk/64/000000/embassy.png",
+                                                    scaledSize: new google.maps.Size(30,30)},
+                                            map: map});
+
+        // Multiple Markers
+        var markers = [
+            ['Jason', 35.105, -106.629, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Leo', 27.964, -82.457, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Patrick', 41.874, -87.637, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Jennifer', 40.782, -73.957, "https://img.icons8.com/emoji/48/000000/woman-student.png"],
+            ['Mark', 47.454, -121.939, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Emma', 46.948, 7.448, "https://img.icons8.com/emoji/48/000000/woman-student.png"],
+            ['Nestor', 33.484, -112.095, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Natalie', 45.505, -122.675, "https://img.icons8.com/emoji/48/000000/woman-student.png"],
+            ['Joe', 40.441, -79.996, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['ma', 43.653, -79.383, "https://img.icons8.com/emoji/48/000000/woman-student.png"],
+            ['Michael', 43.885, -70.332, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Shanker', 29.76, -95.369, "https://img.icons8.com/emoji/48/000000/man-student.png"],
+            ['Supriya', 33.749, -84.388, "https://img.icons8.com/emoji/48/000000/woman-student.png"],
+        ];
+
+        // Loop through our array of markers & place each one on the map
+        for( i = 0; i < markers.length; i++ ) {
+            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            bounds.extend(position);
+            marker = new google.maps.Marker({
+                position: position,
+                icon: { url: markers[i][3],
+                        scaledSize: new google.maps.Size(30, 30)},
+                map: map,
+
+            });
+
+        // Automatically center the map fitting all markers on the screen
+            map.fitBounds(bounds);
+        }
+    }
+
+    </script>
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAvV-d7uRnD9ejDYJs1tHJvtOs5WRAQxZc&callback=initMap"></script>
 
 {% endblock content %}
