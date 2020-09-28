@@ -6,7 +6,6 @@
 import os
 import sys
 
-
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pages_project.settings')
     try:
