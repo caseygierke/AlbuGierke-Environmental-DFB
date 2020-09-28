@@ -11,16 +11,38 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import configparser
+
+# # Define logTo
+# def logTo(message):
+#     with open("/home/caseygierke/AlbuGierkeEnvironmental/Albugierke-Environmental-DFB/pythonlog.txt", "a") as f:
+#         f.write(f"{datetime.datetime.now()}: {message}\n")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Define path
+path = os.path.abspath(os.path.dirname(__file__))
+# Set working directory
+os.chdir(path)
+
+# Get DB configuration
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# logTo(f"BASE_DIR: {BASE_DIR}")
+# logTo(f"config: {dir(config)}")
+print(f"BASE_DIR: {BASE_DIR}")
+print(f"config: {dir(config)}")
+
+GOOGLE_MAPS_API_KEY=os.getenv("maps_api_key")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '***REMOVED***'
+# SECRET_KEY = config['django']['secret_key']
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -139,8 +139,19 @@
         }
     }
 
+    var api_key = "{{ apiKey }}";
+    url1 = 'https://maps.googleapis.com/maps/api/js?v=3&key=';
+    url2 = '&callback=initMap';
+    url = url1.concat(api_key, url2)
+
+    // Add script to document
+    var script = document.createElement('script');
+    script.src = url;
+    document.body.appendChild(script);
+
     </script>
 
-    <script defer src="https://maps.googleapis.com/maps/api/js?v=3&key=***REMOVED***&callback=initMap"></script>
+    <!--<script defer src="https://maps.googleapis.com/maps/api/js?v=3&key="+api_key+"&callback=initMap"></script>-->
+    <!--<script defer src=url></script>-->
 
 {% endblock content %}
