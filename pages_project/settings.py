@@ -35,7 +35,11 @@ GOOGLE_MAPS_API_KEY=os.getenv("maps_api_key")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = False
+=======
+DEBUG = True
+>>>>>>> 32e0c8f8d1087b6828214b75e22cfea0a79b59d8
 
 ALLOWED_HOSTS = ['www.albugierke-environmental.com', '127.0.0.1' ]
 
