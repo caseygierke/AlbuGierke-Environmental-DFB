@@ -1,14 +1,14 @@
 // Define url for API call
-// const url = "https://covidtracking.com/api/states/daily";
-const url = "https://api.covidtracking.com/v1/states/daily.json";
+const url = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv";
 
 // Create jsondata and plotDict variables to store data
 var jsondata;
+var csvData;
 var plotDict;
 // Set default value for plotState
-var plotState = "NM";
+var plotState = "New Mexico";
 // Set default value for plotContent
-var plotContent = 'Positive Increase';
+var plotContent = 'Cases';
 // Create selectstate variable as html selectState dropdown element
 var selectstate = document.getElementById("selectState");
 // Create keyElement variable as html selectKeys dropdown element
@@ -18,7 +18,8 @@ var keyFlag = false;
 // Create filterKeys variable which is an array of keys that are not included in plot content
 var filterKeys = ["date", "state", "hash","dateChecked"];
 // Create perDenominator for normalization
-perDenominator = 100
+percentDenominator = 100
+per10MilDenominator = 10000
 // Create myChart variable
 var myChart;
 

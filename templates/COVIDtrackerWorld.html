@@ -10,17 +10,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/scientific.js"></script>
     <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
 
 	<div class="wrapper">
-        <h1>US COVID 19 activity over time</h1>
-        <h2>Click <a href="{% url 'COVIDtrackerWorld' %}">here</a> to view world data</h2>
-        <h2>Select the state and the data type to view</h2>
+        <h1>World COVID 19 activity over time</h1>
+        <h2>Select the nation and the data type to view</h2>
 
         <div id="loader" class="lds-dual-ring"></div>
 
         <div id="data-content" style="display: none">
-            State: <select id="selectState" onchange="selectState()">
+            Nation: <select id="selectNation" onchange="selectNation()">
             </select>
 
             Content: <select id="selectKeys" onchange="selectKeys()">
@@ -34,8 +34,8 @@
       <table id="data-table" class="display" width="100%"></table>
     </div>
 
-	<script src="{% static 'js/utils-us.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/covid-tracker-us.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/utils-world.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/covid-tracker-world.js' %}" type="text/javascript"></script>
 
 	<br><br>
 	<img src="{% static 'images/i-win.JPG' %}" height=600>

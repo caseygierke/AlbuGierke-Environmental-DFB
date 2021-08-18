@@ -1,16 +1,15 @@
 // Define url for API call
-// const url = "https://covidtracking.com/api/states/daily";
-const url = "https://api.covidtracking.com/v1/states/daily.json";
+const url = "https://covid19api.herokuapp.com";
 
 // Create jsondata and plotDict variables to store data
 var jsondata;
 var plotDict;
 // Set default value for plotState
-var plotState = "NM";
+var plotNation = "US";
 // Set default value for plotContent
-var plotContent = 'Positive Increase';
+var plotContent = 'Confirmed Cases';
 // Create selectstate variable as html selectState dropdown element
-var selectstate = document.getElementById("selectState");
+var selectnation = document.getElementById("selectNation");
 // Create keyElement variable as html selectKeys dropdown element
 var keyElement = document.getElementById("selectKeys");
 // for code optimization // to prevent repetation of plot content data
@@ -21,6 +20,8 @@ var filterKeys = ["date", "state", "hash","dateChecked"];
 perDenominator = 100
 // Create myChart variable
 var myChart;
+
+var orderedDates = {};
 
 // Call getData
 getData();
