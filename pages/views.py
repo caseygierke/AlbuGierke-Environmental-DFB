@@ -35,11 +35,8 @@ class CoachingPageView(TemplateView):
 class COVIDpageView(TemplateView):
 	template_name = 'COVIDtracker.html'
 
-<<<<<<< HEAD
 class COVIDworldPageView(TemplateView):
 	template_name = 'COVIDtrackerWorld.html'
 
-=======
->>>>>>> 32e0c8f8d1087b6828214b75e22cfea0a79b59d8
 class EMDRpageView(TemplateView):
 	template_name = 'EMDRbar.html'

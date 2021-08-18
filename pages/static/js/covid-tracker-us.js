@@ -9,6 +9,8 @@ var plotDict;
 var plotState = "New Mexico";
 // Set default value for plotContent
 var plotContent = 'Cases';
+// Define number of data points to average over
+averageNumber = 10;
 // Create selectstate variable as html selectState dropdown element
 var selectstate = document.getElementById("selectState");
 // Create keyElement variable as html selectKeys dropdown element
@@ -25,6 +27,9 @@ var myChart;
 
 // Call getData
 getData();
+
+// Update average-message
+document.getElementById('average-message').innerHTML = `* Averages are base on ${averageNumber} day averages`
 
 
 

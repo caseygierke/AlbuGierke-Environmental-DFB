@@ -60,14 +60,14 @@ function processDataCallback() {
             plotDict[state]['Dates'] = [date];
 
             // Handle cases
-            plotDict[state]['Cases'] = [cases];
-            plotDict[state]['Case Rate'] = [cases];
+            plotDict[state]['Cases'] = [Number(cases)];
+            plotDict[state]['Case Rate'] = [Number(cases)];
             plotDict[state]['Cases (% of Population)'] = [cases/population[state] * percentDenominator];
             plotDict[state]['Case Rate (per 10,000)'] = [cases/population[state] * per10MilDenominator];
 
             // Handle deaths
-            plotDict[state]['Deaths'] = [deaths];
-            plotDict[state]['Death Rate'] = [deaths];
+            plotDict[state]['Deaths'] = [Number(deaths)];
+            plotDict[state]['Death Rate'] = [Number(deaths)];
             plotDict[state]['Deaths (% of Population)'] = [deaths/population[state] * percentDenominator];
             plotDict[state]['Death Rate (per 10,000)'] = [deaths/population[state] * per10MilDenominator];
 
@@ -77,10 +77,38 @@ function processDataCallback() {
         }
     }
 
+    // Sort states
+    states.sort();
+
+    // Loop through states
+    for (let state of states) {
+
+        // Add to dropdown menu
+        addSelectOptions(selectstate, state);
+
+        // Add Average Dates
+        plotDict[state]["Average Dates"] = plotDict[state]["Dates"].slice(Math.floor(averageNumber/2),-Math.floor(averageNumber/2))
+
+        // Add averages
+        plotDict[state]['Average Case Rate'] = [];
+        plotDict[state]['Average Case Rate (per 10,000)'] = [];
+        plotDict[state]['Average Death Rate'] = [];
+        plotDict[state]['Average Death Rate (per 10,000)'] = [];
+
+        // Loop through data and populate averages
+        for (var i = 0; i < plotDict[state]["Dates"].slice(Math.floor(averageNumber/2),-Math.floor(averageNumber/2)).length; i++) {
+
+            plotDict[state]['Average Case Rate'].push( plotDict[state]['Case Rate'].slice(i,i+averageNumber).reduce((a, b) => a + b, 0) / averageNumber);
+            plotDict[state]['Average Case Rate (per 10,000)'].push( plotDict[state]['Case Rate (per 10,000)'].slice(i,i+averageNumber).reduce((a, b) => a + b, 0) / averageNumber);
+            plotDict[state]['Average Death Rate'].push( plotDict[state]['Death Rate'].slice(i,i+averageNumber).reduce((a, b) => a + b, 0) / averageNumber);
+            plotDict[state]['Average Death Rate (per 10,000)'].push( plotDict[state]['Death Rate (per 10,000)'].slice(i,i+averageNumber).reduce((a, b) => a + b, 0) / averageNumber);
+        }
+    }
+
     // Populate dropdownKeys
     dropdownKeys = Object.keys(plotDict['Alabama'])
 
-    // Sort dropdownKeys and states
+    // Sort dropdownKeys
     dropdownKeys.sort();
     states.sort();
 
@@ -89,15 +117,6 @@ function processDataCallback() {
         if (!excludeKeys.includes(value)) {
             addSelectOptions(keyElement, value);
         }
-    }
-
-    // Loop through states
-    for (let value of states) {
-        // Add to dropdown menu
-        addSelectOptions(selectstate, value);
-
-        // Add averages
-        plotDict["New Mexico"]["Average Dates"] = plotDict["New Mexico"]["Dates"].slice(1,-1)
     }
 
     // Call plotChart function to plot data
@@ -257,18 +276,47 @@ function getData() {
 // Create the plotChart function
 const plotChart=() =>{
 
-  // Create ctx variable which is a html element
-  var ctx = document.getElementById("myChart");
+    // Create ctx variable which is a html element
+    var ctx = document.getElementById("myChart");
 
-  // Check if myChart exists and destroy if so
-  if (myChart) {
+    // Check if myChart exists and destroy if so
+    if (myChart) {
     myChart.destroy();
-  }
+    }
 
-  // Create myChart Chart object
-  myChart = new Chart(ctx, {
+    // Check if datatype is Averaged
+    if (plotContent.includes('Average')) {
+        // Create dataObject
+        dataObject = {
+            labels: plotDict[plotState]["Average Dates"],
+            datasets: [
+                {
+                    data: plotDict[plotState][plotContent],
+                    label: plotState+'- '+plotContent,
+                    borderColor: "DarkBlue",
+                    fill: false,
+                },
+            ],
+        }
+    } else {
+        // Create dataObject
+        dataObject = {
+            labels: plotDict[plotState]["Dates"],
+            datasets: [
+                {
+                    data: plotDict[plotState][plotContent],
+                    label: plotState+'- '+plotContent,
+                    borderColor: "DarkBlue",
+                    fill: false,
+                },
+            ],
+        }
+    }
+
+    // Create myChart Chart object
+    myChart = new Chart(ctx, {
     type: "line",
-  options: {
+    options: {
         legend: {
             display: true,
             labels: {
@@ -306,18 +354,19 @@ const plotChart=() =>{
             }
       }
     },
-    data: {
-      labels: plotDict[plotState]["Dates"],
-      datasets: [
-        {
-          data: plotDict[plotState][plotContent],
-          label: plotState+'- '+plotContent,
-          borderColor: "DarkBlue",
-          fill: false,
-        },
-      ],
-    },
-  });
+    data: dataObject,
+    // data: {
+    //   labels: plotDict[plotState]["Dates"],
+    //   datasets: [
+    //     {
+    //       data: plotDict[plotState][plotContent],
+    //       label: plotState+'- '+plotContent,
+    //       borderColor: "DarkBlue",
+    //       fill: false,
+    //     },
+    //   ],
+    // },
+    });
 }
 
 // Define large arrays
@@ -381,6 +430,7 @@ var normalKeys = [
 ]
 
 var excludeKeys = [
+  'Average Dates',
   'Dates',
   'Pending',
   'Total number that have been in ICU',
